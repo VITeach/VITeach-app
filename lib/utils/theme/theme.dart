@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:viteach_learning_app/utils/theme/custom_themes/appbar_themes.dart';
+import 'package:viteach_learning_app/utils/theme/custom_themes/bottom_sheet_themes.dart';
+import 'package:viteach_learning_app/utils/theme/custom_themes/chip_themes.dart';
+import 'package:viteach_learning_app/utils/theme/custom_themes/elevate_button_themes.dart';
+import 'package:viteach_learning_app/utils/theme/custom_themes/outlined_button_themes.dart';
 import 'package:viteach_learning_app/utils/theme/custom_themes/text_themes.dart';
 
 class VAppTheme {
@@ -11,6 +16,11 @@ class VAppTheme {
       brightness: Brightness.light,
       primaryColor: Colors.blue, // Temporary
       scaffoldBackgroundColor: Colors.white, // Temporary
+      appBarTheme: VAppBarTheme.lightAppBarTheme,
+      bottomSheetTheme: VBottomSheetTheme.lightBottomSheetTheme,
+      chipTheme: VChipTheme.lightChipTheme,
+      elevatedButtonTheme: VElevateButtonTheme.lightElevateButtonTheme,
+      outlinedButtonTheme: VOutlinedButtonTheme.lightOutlinedThemeButton,
       textTheme: VTextTheme.lightTextTheme,
     );
 
@@ -21,6 +31,11 @@ class VAppTheme {
         brightness: Brightness.dark,
         primaryColor: Colors.blue, // Temporary
         scaffoldBackgroundColor: Colors.black, // Temporary
+        appBarTheme: VAppBarTheme.darkAppBarTheme,
+        bottomSheetTheme: VBottomSheetTheme.darkBottomSheetTheme,
+        chipTheme: VChipTheme.darkChipTheme,
+        elevatedButtonTheme: VElevateButtonTheme.darkElevateButtonTheme,
+        outlinedButtonTheme: VOutlinedButtonTheme.darkOutlinedThemeButton,
         textTheme: VTextTheme.darkTextTheme,
     );
 }
