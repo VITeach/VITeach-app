@@ -2,34 +2,31 @@ import 'package:flutter/material.dart';
 
 class VColors {
   // App theme colors
-  static const Color primary = Color(#F9F9F9);//white
-  static const Color secondary = Color(#E55628);//reddish
-  static const Color accentPeach = Color(#ffb07c);//Peach
-  static const Color accentPeachPink = Color(#ff9a8a);
+  static const Color primary = Color(0xFFF9F9F9); // white
+  static const Color secondary = Color(0xFFE55628); // reddish
+  static const Color accentPeach = Color(0xFFFFB07C); // Peach
+  static const Color accentPeachPink = Color(0xFFFF9A8A);
 
   // Text colors
-  static const Color textPrimary = Color(#050505);//black
-  static const Color textSecondary = Color(#E55628);//reddish
+  static const Color textPrimary = Color(0xFF050505); // black
+  static const Color textSecondary = Color(0xFFE55628); // reddish
   static const Color textWhite = Colors.white;
-  static const Color textgreen=Color(#66B56A)
+  static const Color textGreen = Color(0xFF66B56A); // green
 
   // Background colors
-  static const Color light = Color(#F6F6F6);
+  static const Color light = Color(0xFFF6F6F6);
   static const Color dark = Color(0xFF272727);
-  static const Color primaryBackground = Color(#F3F5FF);//off-white
+  static const Color primaryBackground = Color(0xFFF3F5FF); // off-white
 
   // Background Container colors
   static const Color lightContainer = Color(0xFFF6F6F6);
   static Color darkContainer = VColors.white.withOpacity(0.1);
 
   // Button colors
- 
- static const Color buttonPrimary=Color(#14878F);
-  static const Color buttonSecondary=Color(#0d9697);
-  static const Color buttonBlue=Color(#04d9ff);
-   static const Color buttonBabyBlue=Color(#a2cffe);
-  
-  
+  static const Color buttonPrimary = Color(0xFF14878F);
+  static const Color buttonSecondary = Color(0xFF0D9697);
+  static const Color buttonBlue = Color(0xFF04D9FF);
+  static const Color buttonBabyBlue = Color(0xFFA2CFFE);
 
   // Border colors
   static const Color borderPrimary = Color(0xFFD9D9D9);
@@ -49,5 +46,4 @@ class VColors {
   static const Color softGrey = Color(0xFFF4F4F4);
   static const Color lightGrey = Color(0xFFF9F9F9);
   static const Color white = Color(0xFFFFFFFF);
-
 }
