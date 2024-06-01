@@ -30,7 +30,7 @@ class VAppTheme {
         fontFamily: 'Rubik',
         brightness: Brightness.dark,
         primaryColor: Colors.blue, // Temporary
-        scaffoldBackgroundColor: Colors.black, // Temporary
+        scaffoldBackgroundColor: Color.fromARGB(255, 45, 45, 48), // Temporary
         appBarTheme: VAppBarTheme.darkAppBarTheme,
         bottomSheetTheme: VBottomSheetTheme.darkBottomSheetTheme,
         chipTheme: VChipTheme.darkChipTheme,
