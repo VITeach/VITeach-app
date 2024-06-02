@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:viteach_learning_app/screen/Onboarding_Screen/Onboarding_controller.dart';
 import 'package:viteach_learning_app/utils/constants/image_strings.dart';
 import 'package:viteach_learning_app/utils/constants/sizes.dart';
 import 'package:viteach_learning_app/utils/constants/text_strings.dart';
@@ -7,7 +9,9 @@ import 'package:viteach_learning_app/utils/device/device_utilities.dart';
 import 'package:viteach_learning_app/utils/helpers/Helper_functions.dart';
 
 class OnboardingScreen extends StatelessWidget {
-  const OnboardingScreen({super.key});
+  OnboardingScreen({super.key});
+
+  final controller = Get.put(OnboardingController());
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +20,20 @@ class OnboardingScreen extends StatelessWidget {
         children: [
           // Horizontal Scrollable Page
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
             children: const [
-              onBoardingPage(
+              OnBoardingPage(
                 image: VImages.onBoardingImage1,
                 title: VTexts.onBoardingTitle1,
                 subtitle: VTexts.onBoardingSubTitle1,
               ),
-              onBoardingPage(
+              OnBoardingPage(
                 image: VImages.onBoardingImage2,
                 title: VTexts.onBoardingTitle2,
                 subtitle: VTexts.onBoardingSubTitle2,
               ),
-              onBoardingPage(
+              OnBoardingPage(
                 image: VImages.onBoardingImage3,
                 title: VTexts.onBoardingTitle3,
                 subtitle: VTexts.onBoardingSubTitle3,
@@ -36,38 +42,61 @@ class OnboardingScreen extends StatelessWidget {
           ),
 
           // Skip Button
-          const skipButtonWidget(),
+          const SkipButtonWidget(),
 
-          // Dot Navigation SmoothPageIndicator
-          const dotPageNot(),
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: VDeviceUtils.getBottomNavigationBarHeight(),
+            child: Column(
+              children: [
+                // Dot Navigator
+                PageIndicator(),
+                const SizedBox(height: VSizes.spaceBtwItems),
 
-          // Rectangular Button
-
+                // Next Button
+                ElevatedButton(
+                  onPressed: () => OnboardingController.instance.nextPage(),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(
+                        VHelperFunctions.screenWidth() - 50,
+                        VDeviceUtils
+                            .getBottomNavigationBarHeight()), // Width and Height
+                  ),
+                  child: const Text('Next'),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-class dotPageNot extends StatelessWidget {
-  const dotPageNot({
+class PageIndicator extends StatelessWidget {
+  PageIndicator({
     super.key,
   });
 
+  final controller = OnboardingController.instance;
+
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: VDeviceUtils.getBottomNavigationBarHeight(),
-      left: VSizes.defaultSpace,
-      child: SmoothPageIndicator(controller: PageController(), count: 3,
-        effect: ExpandingDotsEffect(activeDotColor: Colors.blueAccent, dotHeight: 6),
+    return SmoothPageIndicator(
+      controller: controller.pageController,
+      onDotClicked: controller.dotNavigationClick,
+      count: 3,
+      effect: const ExpandingDotsEffect(
+        activeDotColor: Colors.blueAccent,
+        dotHeight: 6,
       ),
     );
   }
 }
 
-class skipButtonWidget extends StatelessWidget {
-  const skipButtonWidget({
+class SkipButtonWidget extends StatelessWidget {
+  const SkipButtonWidget({
     super.key,
   });
 
@@ -77,7 +106,7 @@ class skipButtonWidget extends StatelessWidget {
         top: VDeviceUtils.getAppBarHeight(),
         right: VSizes.defaultSpace,
         child: TextButton(
-          onPressed: () {},
+          onPressed: () => OnboardingController.instance.skipPage(),
           child: const Text(
             "Skip",
             style: TextStyle(fontSize: VSizes.fontSizeMd),
@@ -86,8 +115,8 @@ class skipButtonWidget extends StatelessWidget {
   }
 }
 
-class onBoardingPage extends StatelessWidget {
-  const onBoardingPage({
+class OnBoardingPage extends StatelessWidget {
+  const OnBoardingPage({
     super.key,
     required this.image,
     required this.title,

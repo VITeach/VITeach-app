@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: VAppTheme.lightTheme,
       darkTheme: VAppTheme.darkTheme,
-      home: const OnboardingScreen(),
+      home: OnboardingScreen(),
     );
   }
 }
