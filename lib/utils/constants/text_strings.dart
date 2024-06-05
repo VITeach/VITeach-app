@@ -1,5 +1,4 @@
 class VTexts {
-
   // -- GLOBAL Texts
   static const String and = "and";
   static const String skip = "Skip";
@@ -7,7 +6,6 @@ class VTexts {
   static const String submit = "Submit";
   static const String appName = "VITeach Learning";
   static const String vContinue = "Continue";
-
 
   // -- OnBoarding Texts
   static const String onBoardingTitle1 = "Learn anytime and anywhere";
@@ -54,6 +52,4 @@ class VTexts {
   // static const String emailNotReceivedMessage = "Didn’t get the email? Check your junk/spam or resend it.";
   // static const String yourAccountCreatedTitle = "Your account successfully created!";
   // static const String yourAccountCreatedSubTitle = "";
-
 }
-

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:viteach_learning_app/screen/Onboarding_Screen/Onboarding_controller.dart';
+import 'package:viteach_learning_app/screen/Onboarding_Screen/onboarding_controller.dart';
 import 'package:viteach_learning_app/utils/constants/image_strings.dart';
 import 'package:viteach_learning_app/utils/constants/sizes.dart';
 import 'package:viteach_learning_app/utils/constants/text_strings.dart';
 import 'package:viteach_learning_app/utils/device/device_utilities.dart';
-import 'package:viteach_learning_app/utils/helpers/Helper_functions.dart';
+import 'package:viteach_learning_app/utils/helpers/helper_functions.dart';
 
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
@@ -37,7 +37,7 @@ class OnboardingScreen extends StatelessWidget {
                 image: VImages.onBoardingImage3,
                 title: VTexts.onBoardingTitle3,
                 subtitle: VTexts.onBoardingSubTitle3,
-              )
+              ),
             ],
           ),
 
