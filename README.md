@@ -1,6 +1,3 @@
-
-# <center> Project Title 💡 </center>
-
 # <div align ="center"> **VITeach Learning App 📖 📱 <br> Transforming Education Through Technology** :sparkles: </div>
 
 <div align ="center">
@@ -8,7 +5,7 @@
 </div>
 
 
-## Overview 📔
+## 🔶 Overview 📔
 
 <div align ="justify">
   
@@ -18,7 +15,7 @@ With 3 schools under the club, Adi Dravida Welfare (ADW) Middle School, Melakkot
 
 </div>
 
-## Vision and Mission 🎯
+## 🔶 Vision and Mission 🎯
 
 <div align ="justify">
 
@@ -35,7 +32,7 @@ The club’s vision of bestowing underprivileged students an opportunity to get 
 
 </div>
 
-## Impact 💥
+## 🔶 Impact 💥
 
 <div align ="justify">
   
@@ -44,7 +41,7 @@ Since our inception, Viteach has reached thousands of learners across multiple r
 </div>
 
 
-## Get Involved 🧑‍🤝‍🧑
+## 🔶 Get Involved 🧑‍🤝‍🧑
 
 <div align ="justify">
 We invite educators, technologists, volunteers, and donors to join us in our mission to make quality education accessible to all. Together, we can create a brighter future for individuals and communities around the world. <br>
@@ -53,11 +50,42 @@ For more information about Viteach and how you can contribute, 🔗 [please visi
 
 </div>
 
-## Feedback 🗣️
+## 🔷 Features 🗒️
 
-If you have any feedback please reach out to us at [VITeach](viteach@gmail.com) ✅
+- Light/Dark Mode Toggle
+- Simple UI/UX
+- Access to Study Materials
+- Cross Platform
 
-## License ©️
+## 💠 Screens 🫧
 
-[MIT](LICENSE.txt)
+
+## 🔷 Demo 🎉
+
+
+## 🟩 Areas to Improve 🆙
+
+
+## 💚 Bug fixes 🪲
+
+## 💟 Authors :octocat:
+
+- [Vishnuppriyan]() <br>
+- [Aditya Pandey]() <br>
+- [Riya Kapoor]() <br>
+
+## 🔷 How to Contribute? 🤔
+
+
+
+## 🔷 Installation 🚀
+
+
+## 🔷 Feedback 🗣️
+
+If you have any feedback please reach out to us at [VITeach](viteach@gmail.com "Gmail") ✅
+
+## 🔴 License ©️
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.txt)
 
