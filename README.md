@@ -49,7 +49,7 @@ Since our inception, Viteach has reached thousands of learners across multiple r
 <div align ="justify">
 We invite educators, technologists, volunteers, and donors to join us in our mission to make quality education accessible to all. Together, we can create a brighter future for individuals and communities around the world. <br>
 
-For more information about Viteach and how you can contribute, 🔗 [please visit our website](https://viteach.org.in/) ❤️
+For more information about Viteach and how you can contribute, 🔗 [please visit our website](https://viteach.org.in/ "VITeach") ❤️
 
 </div>
 
@@ -59,4 +59,5 @@ If you have any feedback please reach out to us at [VITeach](viteach@gmail.com) 
 
 ## License ©️
 
+[MIT](LICENSE.txt)
 
