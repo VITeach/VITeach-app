@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore_for_file: camel_case_types
+
 class Home_Screen extends StatefulWidget {
   const Home_Screen({super.key});
 
@@ -7,7 +7,8 @@ class Home_Screen extends StatefulWidget {
   State<Home_Screen> createState() => _Home_ScreenState();
 }
 
-class _Home_ScreenState extends State<Home_Screen> with AutomaticKeepAliveClientMixin {
+class _Home_ScreenState extends State<Home_Screen>
+    with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
   @override
@@ -49,7 +50,8 @@ class Search_Screen extends StatefulWidget {
   State<Search_Screen> createState() => _Search_ScreenState();
 }
 
-class _Search_ScreenState extends State<Search_Screen> with AutomaticKeepAliveClientMixin{
+class _Search_ScreenState extends State<Search_Screen>
+    with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
@@ -94,7 +96,8 @@ class About_Screen extends StatefulWidget {
   State<About_Screen> createState() => _About_ScreenState();
 }
 
-class _About_ScreenState extends State<About_Screen>with AutomaticKeepAliveClientMixin {
+class _About_ScreenState extends State<About_Screen>
+    with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
@@ -136,7 +139,8 @@ class Settings_Screen extends StatefulWidget {
   State<Settings_Screen> createState() => _Settings_ScreenState();
 }
 
-class _Settings_ScreenState extends State<Settings_Screen> with AutomaticKeepAliveClientMixin{
+class _Settings_ScreenState extends State<Settings_Screen>
+    with AutomaticKeepAliveClientMixin {
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;

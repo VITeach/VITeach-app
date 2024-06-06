@@ -161,7 +161,7 @@ class _VSearchBarState extends State<VSearchBar> {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                         builder: (context) {
-                                          return MyClassPage(course: course);
+                                          return CoursePage(course: course);
                                         },
                                       ),
                                     );
