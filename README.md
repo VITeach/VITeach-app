@@ -1,7 +1,7 @@
 
-# Project Title
+# <center> Project Title </center>
 
-**VITeach Learning App: Transforming Education Through Technology** :sparkles:
+# <center> **VITeach Learning App: Transforming Education Through Technology** :sparkles: </center>
 
 
 ## Overview
