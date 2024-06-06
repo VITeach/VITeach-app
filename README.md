@@ -54,4 +54,10 @@ For more information about Viteach and how you can contribute, please visit our 
 
 </div>
 
+## Feedback 🗣️
+
+If you have any feedback please reach out to us at [VITeach](viteach@gmail.com)
+
+## License ©️
+
 
