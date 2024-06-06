@@ -57,6 +57,20 @@ For more information about Viteach and how you can contribute, 🔗 [please visi
 - Access to Study Materials
 - Cross Platform
 
+## :atom: Tech Stack Used 🧑‍💻
+
+
+## 🔷 Optimizations ⭐
+
+- Reusable Widgets
+- State Management Tools like GETX, Providers
+
+## Environment Variables
+
+To run this project you will need these environment variables to add in your secrets.dart
+
+"Your_API_KEY"
+
 ## 💠 Screens 🫧
 
 
