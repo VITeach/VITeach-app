@@ -73,7 +73,7 @@ class _VSearchBarState extends State<VSearchBar> {
               child: Column(
                 children: [
                   TextField(
-                    onChanged: (value) => _runfilter,
+                    onChanged: _runfilter,
                     // controller: textEditingController,
                     decoration: InputDecoration(
                       hintText: 'Search Courses',
