@@ -15,6 +15,7 @@ import 'package:viteach_learning_app/utils/constants/sizes.dart';
 import 'package:viteach_learning_app/utils/device/device_utilities.dart';
 import 'package:viteach_learning_app/utils/theme/custom_themes/text_themes.dart';
 import 'package:viteach_learning_app/widgets/quote_widget.dart';
+import 'package:viteach_learning_app/quiz/view/subject_list.dart';
 
 class MyHomePageView extends StatefulWidget {
   const MyHomePageView({super.key});
@@ -43,7 +44,7 @@ class _MyHomePageViewState extends State<MyHomePageView> {
     return Scaffold(
       body: Obx(() => IndexedStack(
           index: navigationcontroller.selectedIndex.value,
-          children: [VSearchBar(), SavedList()])),
+          children: [VSearchBar(), SubjectListScreen(),SavedList()])),
     );
   }
 }
