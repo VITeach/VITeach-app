@@ -9,6 +9,7 @@ import 'package:viteach_learning_app/screen/navigation_controller.dart';
 import 'package:viteach_learning_app/screen/navigation_menubottom.dart';
 import 'package:viteach_learning_app/screen/saved_list.dart';
 import 'package:viteach_learning_app/screen/search_bar.dart';
+import 'package:viteach_learning_app/screen/settings.dart';
 import 'package:viteach_learning_app/screen/v_app_screen.dart';
 import 'package:viteach_learning_app/utils/constants/colors.dart';
 import 'package:viteach_learning_app/utils/constants/sizes.dart';
@@ -44,7 +45,7 @@ class _MyHomePageViewState extends State<MyHomePageView> {
     return Scaffold(
       body: Obx(() => IndexedStack(
           index: navigationcontroller.selectedIndex.value,
-          children: [VSearchBar(), SubjectListScreen(),SavedList()])),
+          children: [VSearchBar(), SavedList(), Settings_Page()])),
     );
   }
 }
