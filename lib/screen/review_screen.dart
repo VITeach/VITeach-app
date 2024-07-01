@@ -35,7 +35,7 @@ class _MyHomePageViewState extends State<MyHomePageView> {
     selectedfilter = filters[0];
   }
 
-  List<Widget> pages = [VSearchBar(), SavedList()];
+  List<Widget> pages = [VSearchBar(), SubjectListScreen(), SavedList(), Settings_Page()];
   final Rx<int> selectedIndex = 0.obs;
 
   @override
@@ -45,7 +45,7 @@ class _MyHomePageViewState extends State<MyHomePageView> {
     return Scaffold(
       body: Obx(() => IndexedStack(
           index: navigationcontroller.selectedIndex.value,
-          children: [VSearchBar(), SavedList(), Settings_Page()])),
+          children: [VSearchBar(), SubjectListScreen(), SavedList(), Settings_Page()])),
     );
   }
 }

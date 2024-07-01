@@ -31,7 +31,7 @@ class App extends StatelessWidget {
           theme: VAppTheme.lightTheme,
           darkTheme: VAppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
-          home: UpgradeAlert(child: Settings_Page())),
+          home: UpgradeAlert(child: OnboardingScreen())),
     );
   }
 }
