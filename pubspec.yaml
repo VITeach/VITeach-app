@@ -13,6 +13,7 @@ environment:
 #                   Packages                      #
 #-------------------------------------------------#
 dependencies:
+  animated_toggle_switch: ^0.8.2
   badges: ^2.0.2
   cached_network_image: ^3.3.1
   carousel_slider: ^4.2.1
@@ -28,9 +29,12 @@ dependencies:
   google_fonts: ^6.2.1
   http: ^1.2.1
   iconsax: ^0.0.8
+  image_cropper: ^7.0.5
+  image_picker: ^1.1.2
   in_app_review: ^2.0.9
   intl: ^0.19.0
   liquid_pull_to_refresh: ^3.0.1
+  percent_indicator: ^4.0.1
   provider: ^6.1.2
   shared_preferences: ^2.2.3
   shimmer: ^3.0.0
@@ -38,16 +42,15 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^25.2.7
   upgrader: ^10.3.0
   url_launcher: ^6.3.0
-  percent_indicator: ^4.0.1
 
 #-------------------------------------------------#
 #                  Dev Packages                   #
 #-------------------------------------------------#
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -63,6 +66,8 @@ flutter:
   assets:
     - assets/images/OnboardingImages/
     - assets/
+    - assets/images/
+    - assets/logos/
 
   #-------------------------------------------------#
   #                  Local Fonts                    #

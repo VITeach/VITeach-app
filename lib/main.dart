@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:viteach_learning_app/screen/Onboarding_Screen/Onboarding_screens.dart';
+import 'package:viteach_learning_app/screen/about_us.dart';
+import 'package:viteach_learning_app/screen/course_not_found.dart';
+import 'package:viteach_learning_app/screen/dummy_screen.dart';
 import 'package:viteach_learning_app/screen/review_screen.dart';
+import 'package:viteach_learning_app/screen/settings.dart';
 import 'package:viteach_learning_app/widgets/saved_provider.dart';
 import 'app.dart';
 import 'package:provider/provider.dart'; 
@@ -27,7 +31,7 @@ class App extends StatelessWidget {
           theme: VAppTheme.lightTheme,
           darkTheme: VAppTheme.darkTheme,
           debugShowCheckedModeBanner: false,
-          home: UpgradeAlert(child: OnboardingScreen())),
+          home: UpgradeAlert(child: Settings_Page())),
     );
   }
 }
