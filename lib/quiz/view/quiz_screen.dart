@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viteach_learning_app/quiz/view/result_screen.dart';
-
+import 'dart:async'; // Import the dart:async library
 
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
@@ -137,7 +137,7 @@ class _QuizScreenState extends State<QuizScreen> {
       "answer_discription": "",
       "is_answered": 0,
       "is_answer_status_right_wrong_omitted": 0,
-      "title": "1 yr has  __________ \rdays.",
+      "title": "1 yr has  __________ days.",
       "options": [
         {
           "option": "a",
@@ -201,6 +201,41 @@ class _QuizScreenState extends State<QuizScreen> {
   int ommitedQuestion = 0;
   int totalRight = 0;
 
+  // Timer variables
+  Timer? _timer;
+  int _remainingSeconds = 600; // 10 minutes in seconds
+
+  @override
+  void initState() {
+    super.initState();
+    _startTimer();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  void _startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_remainingSeconds > 0) {
+        setState(() {
+          _remainingSeconds--;
+        });
+      } else {
+        _timer?.cancel();
+        quizResult(context); // Automatically submit when time is up
+      }
+    });
+  }
+
+  String _formatDuration(int totalSeconds) {
+    final minutes = totalSeconds ~/ 60;
+    final seconds = totalSeconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}';
+  }
+
   quizResult(context) {
     userPercentage = 0;
     wrongQ = 0;
@@ -245,12 +280,14 @@ class _QuizScreenState extends State<QuizScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            
+            
             Text(
-              "Question :${questionINdex + 1}/${quizListData.length}",
+              "Time Remaining: ${_formatDuration(_remainingSeconds)}",
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.red,
               ),
             ),
             Expanded(
@@ -432,4 +469,3 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 }
-
