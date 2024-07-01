@@ -33,27 +33,25 @@ class _VSearchBarState extends State<VSearchBar> {
   @override
   initState() {
     selectedfilter = filters[0];
-    _founditems = courses;
+    _founditems = List.from(courses);
     super.initState();
   }
 
   void _runfilter(String enteredKeyword) {
-    List<Map<String, Object>> results = [];
-    if (enteredKeyword.isEmpty) {
-      results = _founditems;
-    } else {
-      results = _founditems
-          .where((user) => user['title']
-              .toString()
-              .toLowerCase()
-              .contains(enteredKeyword.toLowerCase()))
-          .toList();
-    }
-
     setState(() {
-      _founditems = results;
+      if (enteredKeyword.isEmpty) {
+        _founditems = List.from(courses); // Reset to all courses if search is empty
+      } else {
+        _founditems = courses
+            .where((course) => course['title']
+            .toString()
+            .toLowerCase()
+            .contains(enteredKeyword.toLowerCase()))
+            .toList();
+      }
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +71,7 @@ class _VSearchBarState extends State<VSearchBar> {
               child: Column(
                 children: [
                   TextField(
-                    onChanged: (value) => _runfilter,
-                    // controller: textEditingController,
+                    onChanged: _runfilter,
                     decoration: InputDecoration(
                       hintText: 'Search Courses',
                       prefixIcon: Icon(Iconsax.search_normal),
@@ -95,32 +92,34 @@ class _VSearchBarState extends State<VSearchBar> {
                       itemCount: filters.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        final labels = filters[index];
+                        final label = filters[index];
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: GestureDetector(
                             onTap: () {
                               setState(() {
-                                selectedfilter = labels;
+                                selectedfilter = label;
+                                // You can filter courses based on selected filter here if needed
                               });
                             },
                             child: Chip(
                               avatar: Icon(Iconsax.book),
-                              backgroundColor: selectedfilter == labels
+                              backgroundColor: selectedfilter == label
                                   ? Color.fromARGB(255, 164, 210, 249)
                                   : Color.fromRGBO(245, 247, 249, 1),
                               side: const BorderSide(
                                   color: Color.fromRGBO(245, 247, 249, 1)),
-                              label: Text(labels,
-                                  style: VTextTheme.lightTextTheme.bodySmall),
-                              labelStyle: TextStyle(
-                                fontSize: 13,
+                              label: Text(
+                                label,
+                                style: VTextTheme.lightTextTheme.bodySmall,
                               ),
+                              labelStyle: TextStyle(fontSize: 13),
                               padding: EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 15.0),
                               elevation: 3.0,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(30)),
+                                borderRadius: BorderRadius.circular(30),
+                              ),
                             ),
                           ),
                         );
@@ -139,43 +138,44 @@ class _VSearchBarState extends State<VSearchBar> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 12.0, vertical: 5.0),
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 229, 165, 253),
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey,
-                                    blurRadius: 5.0,
-                                  ),
-                                ]),
+                              color: Color.fromARGB(255, 229, 165, 253),
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 5.0,
+                                ),
+                              ],
+                            ),
                             child: QuoteApi(),
                           ),
                           ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              primary: false,
-                              itemCount: _founditems.length,
-                              itemBuilder: (context, index) {
-                                final course = _founditems[index];
-                                return GestureDetector(
-                                  onTap: () {
-                                    Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                        builder: (context) {
-                                          return CoursePage(course: course);
-                                        },
-                                      ),
-                                    );
-                                  },
-                                  child: CourseCard(
-                                    title: course['title'] as String,
-                                    hours: course['hours'] as int,
-                                    image: course['imageUrl'] as String,
-                                    backgroundColor: index.isEven
-                                        ? Color.fromRGBO(133, 199, 235, 1)
-                                        : Color.fromRGBO(196, 247, 212, 1),
-                                  ),
-                                );
-                              }),
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            primary: false,
+                            itemCount: _founditems.length,
+                            itemBuilder: (context, index) {
+                              final course = _founditems[index];
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          CoursePage(course: course),
+                                    ),
+                                  );
+                                },
+                                child: CourseCard(
+                                  title: course['title'] as String,
+                                  hours: course['hours'] as int,
+                                  image: course['imageUrl'] as String,
+                                  backgroundColor: index.isEven
+                                      ? Color.fromRGBO(133, 199, 235, 1)
+                                      : Color.fromRGBO(196, 247, 212, 1),
+                                ),
+                              );
+                            },
+                          ),
                         ],
                       ),
                     ),
