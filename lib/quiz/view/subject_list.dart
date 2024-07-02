@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:viteach_learning_app/quiz/view/quiz_screen.dart';
+import '../../screen/navigation_menubottom.dart';
 
 
 class SubjectListScreen extends StatelessWidget {
@@ -55,6 +56,7 @@ class SubjectListScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: NavigationMenubottom(),
     );
   }
 }
