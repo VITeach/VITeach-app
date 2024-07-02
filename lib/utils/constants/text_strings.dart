@@ -12,9 +12,9 @@ class VTexts {
   static const String onBoardingTitle2 = "Learn effectively";
   static const String onBoardingTitle3 = "Improve your knowledge";
 
-  static const String onBoardingSubTitle1 = "Lorem Impsum";
-  static const String onBoardingSubTitle2 = "Lorem Impsum";
-  static const String onBoardingSubTitle3 = "Lorem Impsum";
+  static const String onBoardingSubTitle1 = "Access quality education from any location, at any time.";
+  static const String onBoardingSubTitle2 = "Engage with interactive and efficient learning experiences.";
+  static const String onBoardingSubTitle3 = "Gain tools and resources to enhance your academic growth.";
 
 
   // // -- Authentication Forms
