@@ -79,7 +79,7 @@ To run this project you will need these environment variables to add in your `se
 ### Onboarding Screens:
 1. **Learn Anytime and Anywhere:** 
    - Description: Access quality education from any location.
-   - ![Onboarding 1](assets/screenshots/onboarding1.png)
+  - ![Onboarding 1](assets/screenshots/onboarding1.png)
    
 2. **Learn Effectively:**
    - Description: Interactive learning experiences to enhance understanding.
@@ -106,17 +106,12 @@ To run this project you will need these environment variables to add in your `se
    - Results screen and option to retake quizzes.
    - ![Quizzes](assets/screenshots/quiz.png)
    
-3. **Saved List:**
-   - Users can save and access their favorite materials.
-   - ![Saved List](assets/screenshots/saved.png)
    
-4. **Settings:**
+3. **Settings:**
    - Includes options for privacy policy, about us, and app version.
    - ![Settings](assets/screenshots/settings.png)
 
-//## 🔷 Demo 🎉
 
-![Demo](assets/screenshots/demo.gif)
 
 ## 🟩 Areas to Improve 🆙
 
