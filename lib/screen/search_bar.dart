@@ -29,7 +29,6 @@ class _VSearchBarState extends State<VSearchBar> {
 
   List<Map<String, Object>> _founditems = [];
 
-  // final TextEditingController textEditingController = TextEditingController();
   @override
   initState() {
     selectedfilter = filters[0];
@@ -52,6 +51,18 @@ class _VSearchBarState extends State<VSearchBar> {
     });
   }
 
+  void _filterCourses(String filter) {
+    setState(() {
+      if (filter == "All") {
+        _founditems = List.from(courses); // Show all courses
+      } else {
+        _founditems = courses
+            .where((course) => course['title'] == filter)
+            .toList();
+      }
+      selectedfilter = filter;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,32 +106,28 @@ class _VSearchBarState extends State<VSearchBar> {
                         final label = filters[index];
                         return Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                selectedfilter = label;
-                                // You can filter courses based on selected filter here if needed
-                              });
-                            },
-                            child: Chip(
-                              avatar: Icon(Iconsax.book),
-                              backgroundColor: selectedfilter == label
-                                  ? Color.fromARGB(255, 164, 210, 249)
-                                  : Color.fromRGBO(245, 247, 249, 1),
-                              side: const BorderSide(
-                                  color: Color.fromRGBO(245, 247, 249, 1)),
-                              label: Text(
-                                label,
-                                style: VTextTheme.lightTextTheme.bodySmall,
-                              ),
-                              labelStyle: TextStyle(fontSize: 13),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20.0, vertical: 15.0),
-                              elevation: 3.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
+                          child: FilterChip(
+                            avatar: Icon(Iconsax.book),
+                            backgroundColor: selectedfilter == label
+                                ? Color.fromARGB(255, 164, 210, 249)
+                                : Color.fromRGBO(245, 247, 249, 1),
+                            side: const BorderSide(
+                                color: Color.fromRGBO(245, 247, 249, 1)),
+                            label: Text(
+                              label,
+                              style: VTextTheme.lightTextTheme.bodySmall,
                             ),
+                            labelStyle: TextStyle(fontSize: 13),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 20.0, vertical: 15.0),
+                            elevation: 3.0,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            selected: selectedfilter == label,
+                            onSelected: (isSelected) {
+                              _filterCourses(label);
+                            },
                           ),
                         );
                       },
