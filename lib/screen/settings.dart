@@ -17,7 +17,8 @@ class _Settings_PageState extends State<Settings_Page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text("Settings")),
+        title: Text("Settings"),
+        centerTitle: true,
       ),
       body: SizedBox(
         child: ListView(

@@ -13,7 +13,8 @@ class SavedList extends StatelessWidget {
     final fav = Provider.of<SavedProvider>(context).saved;
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: const Text("Saved List")),
+        title: const Text("Saved List"),
+        centerTitle: true,
       ),
       body: ListView.builder(
           itemCount: fav.length,
